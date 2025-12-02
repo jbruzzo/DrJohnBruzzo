@@ -1,9 +1,16 @@
+# JEKYLL CONFIGURATION - TECHNICAL FATIGUE BLOG (CORRECTED)
 # ============================================================
-# JEKYLL CONFIGURATION - TECHNICAL FATIGUE BLOG
-# Generated for: GitHub Pages + Jupyter Notebook Integration
+# GitHub Pages + Jupyter Notebook Integration
 # Platform: GitHub Pages (Jekyll 4.3+)
-# Theme: Minimal
+# Theme: Minimal (Remote Theme - Official)
+# CRITICAL FIX: Uses remote_theme instead of theme:
 # ============================================================
+
+# ============================================================
+# REMOTE THEME (Official GitHub Pages Minimal Theme)
+# REQUIRED: This is the ONLY change from the previous version
+# ============================================================
+remote_theme: pages-themes/minimal@v0.2.0
 
 # ============================================================
 # SITE METADATA & BRANDING
@@ -54,14 +61,11 @@ paginate: 10
 paginate_path: "/blog/page:num/"
 
 # ============================================================
-# THEME (GitHub Pages compatible)
-# ============================================================
-theme: jekyll-theme-minimal
-
-# ============================================================
 # PLUGINS (All GitHub Pages supported)
+# CRITICAL: jekyll-remote-theme MUST be first for remote_theme
 # ============================================================
 plugins:
+  - jekyll-remote-theme
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
@@ -88,7 +92,6 @@ social:
 # DEFAULT FRONT MATTER
 # ============================================================
 defaults:
-  # Posts
   - scope:
       path: ""
       type: "posts"
@@ -98,14 +101,12 @@ defaults:
       comments: false
       excerpt_separator: "<!--more-->"
   
-  # Pages
   - scope:
       path: ""
       type: "pages"
     values:
       layout: "page"
   
-  # Tutorials Collection
   - scope:
       path: ""
       type: "tutorials"
@@ -154,6 +155,12 @@ show_excerpts: true
 excerpt_separator: "<!--more-->"
 
 # ============================================================
+# MINIMAL THEME SPECIFIC OPTIONS
+# ============================================================
+show_downloads: false
+google_analytics: ""
+
+# ============================================================
 # EXCLUDE FROM BUILD
 # ============================================================
 exclude:
@@ -176,7 +183,7 @@ exclude:
   - Dockerfile
 
 # ============================================================
-# KEEP FILES (don't delete during build)
+# KEEP FILES
 # ============================================================
 keep_files:
   - assets
@@ -184,21 +191,19 @@ keep_files:
   - .gitkeep
 
 # ============================================================
-# LIQUID SETTINGS (Template Engine)
+# LIQUID SETTINGS
 # ============================================================
 liquid:
   error_mode: strict
   strict_filters: false
 
 # ============================================================
-# INCREMENTAL BUILD (Faster local development)
+# INCREMENTAL BUILD
 # ============================================================
 incremental: true
 
 # ============================================================
 # GITHUB PAGES SPECIFIC
 # ============================================================
-# Uncomment if deploying to GitHub Pages
-# GitHub automatically sets: source, destination, safe, lsi, incremental
 lsi: false
 safe: true
