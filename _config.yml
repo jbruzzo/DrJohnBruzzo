@@ -18,9 +18,9 @@ baseurl: ""
 permalink: /blog/:year/:month/:day/:title/
 
 # Jekyll Build Settings
-markdown: kramdown
-highlighter: rouge
-encoding: utf-8
+# markdown: kramdown
+# highlighter: rouge
+# encoding: utf-8
 
 # Theme Configuration
 theme: jekyll-theme-minimal
