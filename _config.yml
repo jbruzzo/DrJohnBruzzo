@@ -1,0 +1,80 @@
+# Jekyll Configuration for Technical Fatigue Blog
+# This config generates a professional engineering blog with support for Jupyter notebooks
+
+title: "Diseño a Fatiga con Python"
+tagline: "Análisis, cálculo y predicción de vida a fatiga | Tutorials | Recursos"
+author:
+  name: "Dr. John Bruzzo"
+  email: "your-email@example.com"
+
+description: >-
+  Blog técnico especializado en análisis de fatiga de materiales, cálculo de vida útil,
+  y tutoriales de Python para ingeniería. Incluyendo notebooks interactivos con pyLife, 
+  py_fatigue y herramientas open-source para ingenieros y estudiantes.
+
+# Site URL Configuration
+url: "https://YOUR_USERNAME.github.io"
+baseurl: ""
+permalink: /blog/:year/:month/:day/:title/
+
+# Jekyll Build Settings
+markdown: kramdown
+highlighter: rouge
+encoding: utf-8
+
+# Theme Configuration
+theme: jekyll-theme-minimal
+
+# Plugins (automatically enabled on GitHub Pages)
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Feed Configuration
+feed:
+  posts_limit: 10
+
+# Default Front Matter for Posts
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Dr. John Bruzzo"
+      comments: false
+
+# SEO Configuration
+social:
+  name: "Dr. John Bruzzo"
+  links:
+    - "https://github.com/YOUR_USERNAME"
+    - "https://www.youtube.com/channel/YOUR_CHANNEL"
+
+# Jekyll Exclude
+exclude:
+  - .jekyll-cache
+  - .gitignore
+  - .git
+  - README.md
+  - LICENSE
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .venv
+  - __pycache__
+
+# Collections
+collections:
+  tutorials:
+    output: true
+    permalink: /tutorials/:path/
+
+# Navigation Menu
+header_pages:
+  - about.md
+  - tutorials.md
+  - recursos.md
+  - contacto.md
