@@ -175,9 +175,9 @@ exclude:
   - vendor
   - .venv
   - __pycache__
-  - *.pyc
+  - "*.pyc"
   - .DS_Store
-  - *.ipynb_checkpoints
+  - "*.ipynb_checkpoints"
   - .env
   - docker-compose.yml
   - Dockerfile
